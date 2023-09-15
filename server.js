@@ -14,6 +14,12 @@ app.get("/",(req,res)=>{
     res.send("server working🔥");
 })
 
+// Routes
+const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/user');
+app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
