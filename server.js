@@ -10,7 +10,7 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(cors());
+app.use(cors("https://profile-management-app.netlify.app"));
 app.use(bodyParser.json());
 
 var secretKey = process.env.Key
