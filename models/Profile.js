@@ -8,19 +8,23 @@ const profileSchema = new mongoose.Schema({
   },
   age: {
     type: Number,
-    default: 0,
+    default: "",
+    required: true,
   },
   gender: {
     type: String,
     default: '',
+    required: true,
   },
   dob: {
     type: Date,
     default: null, 
+    required: true,
   },
   mobile: {
     type: String,
     default: '', 
+    required: true,
   },
 });
 
