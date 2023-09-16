@@ -10,7 +10,7 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(cors("https://profile-management-app.netlify.app"));
+app.use(cors( {origin:"https://profile-management-app.netlify.app"} ));
 app.use(bodyParser.json());
 
 var secretKey = process.env.Key
@@ -21,6 +21,11 @@ const User = require('./models/User');
 const Profile = require('./models/Profile');
 
 // Routes
+
+app.get("/", function (req, res) {
+  res.send("<h1>Profile Management Project...</h1>");
+});
+
 app.post('/api/auth/signup', async (req, res) => {
     try {
       const { name, email, password } = req.body;
